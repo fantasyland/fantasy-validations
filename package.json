@@ -1,0 +1,24 @@
+{
+  "name": "fantasy-validations",
+  "version": "0.0.0",
+  "description": "Validation data structure.",
+  "main": "validation.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/puffnfresh/fantasy-validations.git"
+  },
+  "keywords": [
+    "fantasyland",
+    "validation",
+    "applicative"
+  ],
+  "author": "Brian McKenna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/puffnfresh/fantasy-validations/issues"
+  },
+  "dependencies": {
+    "daggy": "0.0.1"
+  }
+}
