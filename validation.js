@@ -30,12 +30,13 @@ Validation.prototype.map = function(f) {
     return this.bimap(identity, f);
 };
 Validation.prototype.ap = function(b) {
-    return this.fold(
+    var self = this;
+    return b.fold(
         function(f) {
             return Validation.Failure(f);
         },
         function(s) {
-            return b.map(s);
+            return self.map(s);
         }
     );
 };
