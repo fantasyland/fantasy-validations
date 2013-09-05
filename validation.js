@@ -31,8 +31,15 @@ Validation.prototype.map = function(f) {
 };
 Validation.prototype.ap = function(b) {
     return this.fold(
-        function(f) {
-            return Validation.Failure(f);
+        function(f1) {
+            return b.fold(
+                function(f2) {
+                    return Validation.Failure(f1.concat(f2));
+                },
+                function(s) {
+                    return Validation.Failure(f1);
+                }
+            );
         },
         function(s) {
             return b.map(s);
