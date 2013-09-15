@@ -1,6 +1,6 @@
 {
   "name": "fantasy-validations",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Validation data structure.",
   "main": "validation.js",
   "scripts": {},
