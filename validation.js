@@ -1,12 +1,10 @@
 var daggy = require('daggy'),
+    C = require('fantasy-combinators'),
     Validation = daggy.taggedSum({
         Success: ['s'],
         Failure: ['f']
     });
 
-function identity(a) {
-    return a;
-}
 
 // Methods
 Validation.prototype.fold = function(f, g) {
@@ -27,7 +25,7 @@ Validation.prototype.bimap = function(f, g) {
     );
 };
 Validation.prototype.map = function(f) {
-    return this.bimap(identity, f);
+    return this.bimap(C.identity, f);
 };
 Validation.prototype.ap = function(b) {
     return this.fold(
@@ -53,7 +51,7 @@ Validation.prototype.concat = function(b) {
                 function(g) {
                     return f.concat(g);
                 },
-                identity
+                C.identity
             );
         },
         function(s) {
