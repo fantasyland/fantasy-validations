@@ -21,5 +21,16 @@
   "dependencies": {
     "daggy": "0.0.1",
     "fantasy-combinators": "0.0.1"
-  }
+  },
+  "devDependencies": {
+    "nodeunit": "0.9.x",
+    "fantasy-check": "0.1.6",
+    "fantasy-helpers": "0.0.x",
+    "fantasy-identities": "0.0.x"
+  },
+  "scripts": {
+      "test": "node --harmony_destructuring node_modules/.bin/nodeunit test/*.js"
+  },
+  "files": ["fantasy-validations.js", "src/*.js"],
+  "main": "fantasy-validations.js"
 }
